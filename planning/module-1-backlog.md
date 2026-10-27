@@ -14,11 +14,11 @@ This is the broader capstone roadmap based on the overview and starter code. The
 
 | ID | Issue title | Sprint | Points | Depends on |
 |---|---|---:|---:|---|
-| CA-01 | [Set up the development environment and Sprint 1 branch](https://github.com/KaustubhMukdam/devops-capstone-project/issues/1) | 1 | 2 | — |
-| CA-02 | [Read a customer account by ID](https://github.com/KaustubhMukdam/devops-capstone-project/issues/3) | 1 | 3 | CA-01 |
-| CA-03 | [Update a customer account](https://github.com/KaustubhMukdam/devops-capstone-project/issues/4) | 1 | 3 | CA-02 |
-| CA-04 | [Delete a customer account](https://github.com/KaustubhMukdam/devops-capstone-project/issues/5) | 1 | 3 | CA-02 |
-| CA-05 | [List and filter customer accounts](https://github.com/KaustubhMukdam/devops-capstone-project/issues/6) | 1 | 3 | CA-01 |
+| CA-01 | [Set up the development environment and Sprint 1 branch](https://github.com/KaustubhMukdam/devops-capstone-project/issues/1) | 1 | 3 | — |
+| CA-02 | [Read a customer account by ID](https://github.com/KaustubhMukdam/devops-capstone-project/issues/3) | 1 | 5 | CA-01 |
+| CA-03 | [Update a customer account](https://github.com/KaustubhMukdam/devops-capstone-project/issues/4) | 1 | 8 | CA-02 |
+| CA-04 | [Delete a customer account](https://github.com/KaustubhMukdam/devops-capstone-project/issues/5) | 1 | 5 | CA-02 |
+| CA-05 | [List and filter customer accounts](https://github.com/KaustubhMukdam/devops-capstone-project/issues/6) | 1 | 5 | CA-01 |
 | CA-06 | [Verify Sprint 1 tests and at least 95% coverage](https://github.com/KaustubhMukdam/devops-capstone-project/issues/7) | 1 | 2 | CA-02–05 |
 | CA-07 | [Run lint, tests, and coverage in GitHub Actions](https://github.com/KaustubhMukdam/devops-capstone-project/issues/8) | 2 | 5 | CA-06 |
 | CA-08 | [Add secure response headers with Flask-Talisman](https://github.com/KaustubhMukdam/devops-capstone-project/issues/9) | 2 | 3 | CA-07 |
@@ -43,7 +43,7 @@ Each section below is the published GitHub issue body with the matching title. T
 
 **Details and Assumptions:** Use the starter repository and its documented dependencies. Use a PostgreSQL test database where required. Do not count an unrun setup command as completion.
 
-**Sprint and Estimate:** Sprint 1; 2 points.
+**Sprint and Estimate:** Sprint 1; 3 points.
 
 **Acceptance Criteria:** Given a clean checkout, when setup completes, then dependencies install and the existing test command runs. Given Sprint 1 work begins, when code is changed, then commits are made on a development branch and submitted through a pull request.
 
@@ -55,7 +55,7 @@ Each section below is the published GitHub issue body with the matching title. T
 
 **Details and Assumptions:** Add `GET /accounts/<id>` to the Flask service. Use the existing Account serialization format. Update the `Location` header in the create route to point to the new read URL.
 
-**Sprint and Estimate:** Sprint 1; 3 points.
+**Sprint and Estimate:** Sprint 1; 5 points.
 
 **Acceptance Criteria:** Given an existing account, when its ID is requested, then the API returns HTTP 200 and its serialized fields. Given an unknown ID, when it is requested, then the API returns HTTP 404. Given a successful create, when the `Location` header is followed, then it resolves to the created account. Write failing tests before implementation.
 
@@ -67,7 +67,7 @@ Each section below is the published GitHub issue body with the matching title. T
 
 **Details and Assumptions:** Add `PUT /accounts/<id>` and reuse model deserialization and content-type validation.
 
-**Sprint and Estimate:** Sprint 1; 3 points.
+**Sprint and Estimate:** Sprint 1; 8 points.
 
 **Acceptance Criteria:** Given an existing account and a valid JSON representation, when it is updated, then the API returns the updated representation and a later read shows the saved values. Given an unknown ID, then the API returns HTTP 404. Given an unsupported content type or invalid body, then the request is rejected consistently with the service's error handling. Write failing tests before implementation.
 
@@ -79,7 +79,7 @@ Each section below is the published GitHub issue body with the matching title. T
 
 **Details and Assumptions:** Add `DELETE /accounts/<id>` using the existing model delete method.
 
-**Sprint and Estimate:** Sprint 1; 3 points.
+**Sprint and Estimate:** Sprint 1; 5 points.
 
 **Acceptance Criteria:** Given an existing account, when it is deleted, then the API returns HTTP 204 and a later read returns HTTP 404. Given an unknown ID, when deletion is requested, then the API returns HTTP 204 without creating or changing a record. Write failing tests before implementation.
 
@@ -91,7 +91,7 @@ Each section below is the published GitHub issue body with the matching title. T
 
 **Details and Assumptions:** Add `GET /accounts`. The model already offers `all()` and `find_by_name()`.
 
-**Sprint and Estimate:** Sprint 1; 3 points.
+**Sprint and Estimate:** Sprint 1; 5 points.
 
 **Acceptance Criteria:** Given accounts exist, when the collection is requested, then the API returns HTTP 200 and a JSON list. Given no accounts, then it returns an empty list. Given a `name` query parameter, then only exact name matches are returned. Write failing tests before implementation.
 
