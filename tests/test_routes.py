@@ -144,4 +144,36 @@ class TestAccountService(TestCase):
         self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
         self.assertEqual(response.get_json()["error"], "Method not Allowed")
 
+    def test_update_an_account(self):
+        """It should update an account and persist the new values"""
+        account = self._create_accounts(1)[0]
+        updated = account.serialize()
+        updated["phone_number"] = "555-1111"
+        response = self.client.put(f"{BASE_URL}/{account.id}", json=updated)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.get_json(), updated)
+        read_response = self.client.get(f"{BASE_URL}/{account.id}")
+        self.assertEqual(read_response.get_json(), updated)
+
+    def test_update_account_not_found(self):
+        """It should return 404 when updating an unknown account"""
+        response = self.client.put(f"{BASE_URL}/0", json=AccountFactory().serialize())
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+    def test_update_account_bad_request(self):
+        """It should reject an incomplete account update"""
+        account = self._create_accounts(1)[0]
+        response = self.client.put(f"{BASE_URL}/{account.id}", json={"name": "Incomplete"})
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+    def test_update_account_unsupported_media_type(self):
+        """It should require JSON for an account update"""
+        account = self._create_accounts(1)[0]
+        response = self.client.put(
+            f"{BASE_URL}/{account.id}",
+            data="not json",
+            content_type="text/plain",
+        )
+        self.assertEqual(response.status_code, status.HTTP_415_UNSUPPORTED_MEDIA_TYPE)
+
     # ADD YOUR TEST CASES HERE ...
