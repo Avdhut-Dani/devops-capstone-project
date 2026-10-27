@@ -191,4 +191,30 @@ class TestAccountService(TestCase):
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         self.assertEqual(response.data, b"")
 
+    def test_list_accounts_empty(self):
+        """It should return an empty list when no accounts exist"""
+        response = self.client.get(BASE_URL)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.get_json(), [])
+
+    def test_list_all_accounts(self):
+        """It should list every account"""
+        accounts = self._create_accounts(3)
+        response = self.client.get(BASE_URL)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(
+            sorted(response.get_json(), key=lambda account: account["id"]),
+            sorted([account.serialize() for account in accounts], key=lambda account: account["id"]),
+        )
+
+    def test_list_accounts_by_name(self):
+        """It should filter accounts by exact name"""
+        for name in ("Jane Doe", "John Doe", "Jane Doe"):
+            response = self.client.post(BASE_URL, json=AccountFactory(name=name).serialize())
+            self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        response = self.client.get(BASE_URL, query_string={"name": "Jane Doe"})
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(response.get_json()), 2)
+        self.assertTrue(all(account["name"] == "Jane Doe" for account in response.get_json()))
+
     # ADD YOUR TEST CASES HERE ...
