@@ -2,14 +2,14 @@
 
 Repository: https://github.com/KaustubhMukdam/devops-capstone-project
 
-This plan is based on the capstone overview and the starter code. The issues, Project board, sprint assignments, and estimates were published and verified on 2026-10-27. The starter service already implements `POST /accounts` and the Account model; the four missing REST operations are read, update, delete, and list. The existing `tekton/` files are partial starter manifests, so the delivery story is to complete and verify them.
+This is the broader capstone roadmap based on the overview and starter code. The later-provided Module 1 lab handout requires an initial **seven-story board**, so only CA-01 through CA-05, CA-10, and CA-13 are active on the Module 1 board. The other issues remain in GitHub for later modules and are archived from the active board view. See [module-1-lab.md](module-1-lab.md) for the lab-specific plan and evidence stages. The starter service already implements `POST /accounts` and the Account model; the four missing REST operations are read, update, delete, and list.
 
 ## Board and sprint setup
 
 - GitHub Project: **[Customer Accounts Capstone](https://github.com/users/KaustubhMukdam/projects/3)**, public and linked to the repository. It reuses the existing capstone Project instead of adding another board.
-- Existing board status choices: **New Issues**, **Icebox**, **Product Backlog**, **Sprint Backlog**, **In Progress**, **Review/QA**, **Done**. The six Sprint 1 stories are in Sprint Backlog; Sprint 2 and 3 stories are in Product Backlog. Close each GitHub issue when its work is complete.
-- Sprint field: **Sprint 1**, **Sprint 2**, **Sprint 3**. Dates are unset because the actual course/lab schedule is unknown.
-- Existing **Estimate** number field stores Fibonacci story points (1, 2, 3, 5, 8). The estimates below represent relative effort, not hours.
+- Existing board status choices: **New Issues**, **Icebox**, **Product Backlog**, **Sprint Backlog**, **In Progress**, **Review/QA**, **Done**. The seven lab stories are being moved through the PDF's evidence stages. Close each GitHub issue when its work is complete; the lab's instruction to close stories merely when sprint planning is finished would otherwise misstate implementation progress.
+- The board now has three one-week **Iteration** values starting 2026-10-27, 2026-11-03, and 2026-11-10. A separate Sprint select field remains from the broader roadmap.
+- Existing **Estimate** number field stores story points. The broader-roadmap estimates below were made before the detailed PDF was supplied; the lab's Sprint 1 estimates use its 3/5/8/13 scale.
 - Labels: `user story`, `sprint:1`, `sprint:2`, `sprint:3`, `api`, `ci`, `security`, `deployment`, `cd`. GitHub Project fields are the source of truth for sprint and points.
 
 | ID | Issue title | Sprint | Points | Depends on |
@@ -29,7 +29,7 @@ This plan is based on the capstone overview and the starter code. The issues, Pr
 | CA-13 | [Deploy and expose the service on Kubernetes](https://github.com/KaustubhMukdam/devops-capstone-project/issues/14) | 3 | 5 | CA-11, CA-12 |
 | CA-14 | [Automate lint, test, build, and deploy with Tekton](https://github.com/KaustubhMukdam/devops-capstone-project/issues/15) | 3 | 5 | CA-13 |
 
-Sprint 1: **16 points**. Sprint 2: **11 points**. Sprint 3: **18 points**. Total: **45 points**. These are planning estimates and can change as implementation reveals work.
+The table below records the original 14-story roadmap, not the seven active lab cards or their final lab estimates. Its future-work estimates can change as implementation reveals work.
 
 ## Issue bodies
 

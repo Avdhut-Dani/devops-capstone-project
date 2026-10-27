@@ -1,17 +1,18 @@
 # Module 1 evidence
 
-| Requirement | Evidence | Status |
+The detailed course handout in local `modules/module-1.pdf` is the evidence checklist. The repository and [Customer Accounts Capstone board](https://github.com/users/KaustubhMukdam/projects/3/views/1) are public. See the [seven-story lab plan](../planning/module-1-lab.md) for the required board states.
+
+| Lab exercise | URL or screenshot | Status |
 |---|---|---|
-| GitHub repository | https://github.com/KaustubhMukdam/devops-capstone-project | Verified public repository |
-| Repository screenshot | [module-1-repository.png](module-1-repository.png) | Existing screenshot; verify it meets the rubric before submission |
-| User story template | https://github.com/KaustubhMukdam/devops-capstone-project/blob/main/.github/ISSUE_TEMPLATE/user-story.md | Published and verified |
-| Product Backlog issues | [Issue list](https://github.com/KaustubhMukdam/devops-capstone-project/issues); individual links in [backlog plan](../planning/module-1-backlog.md) | 14 open stories verified; issue list screenshot pending |
-| GitHub Project / Kanban board | https://github.com/users/KaustubhMukdam/projects/3 | Public, linked to repository, 14 items verified; board screenshot pending |
-| Sprint setup and estimates | [Project](https://github.com/users/KaustubhMukdam/projects/3) has `Sprint` and `Estimate` fields | Verified values: Sprint 1 = 6 stories / 16 points; Sprint 2 = 3 / 11; Sprint 3 = 5 / 18. Field screenshot pending |
-| Sprint 1 backlog | [Project](https://github.com/users/KaustubhMukdam/projects/3), `Sprint Backlog` status | Six Sprint 1 stories verified in Sprint Backlog; screenshot pending |
+| Public repository and README | [README](https://github.com/KaustubhMukdam/devops-capstone-project/blob/main/README.md); [existing screenshot](module-1-repository.png) | Saved; inspect visibility wording before peer submission |
+| User story template | [Template](https://github.com/KaustubhMukdam/devops-capstone-project/blob/main/.github/ISSUE_TEMPLATE/user-story.md); [existing screenshot](module-1-story-template.png) | URL ready; screenshot cuts off Acceptance Criteria, so capture a fuller replacement for peer submission |
+| Seven stories in New Issues | [Board](https://github.com/users/KaustubhMukdam/projects/3/views/1); `planning-userstories-done.png` | Board currently staged with seven New Issues; screenshot pending |
+| Product Backlog and Icebox triage | Same board; `planning-productbacklog-done.png` | Pending next stage and screenshot |
+| Labels and ranked Product Backlog | Same board; `planning-labels-done.png` | Yellow label created; issue labels, board field visibility, and screenshot pending |
+| Five-story Sprint 1 Backlog | Same board; `planning-kanban-done.png` | One-week iterations created; estimates, assignment, final status, and screenshot pending |
 
-Backlog source: [planning/module-1-backlog.md](../planning/module-1-backlog.md).
+The user-provided [issue list screenshot](module-1-issues.png) shows the broader 14-issue roadmap, which exceeds the handout's seven active board stories. The [earlier board screenshot](module-1-board.png) shows the pre-alignment 14-card board. Keep them as history; do not use them as the lab's seven-story or final Kanban evidence.
 
-The project was verified public on 2026-10-27. One accidental duplicate of CA-01 was closed as [issue #2](https://github.com/KaustubhMukdam/devops-capstone-project/issues/2) and removed from the board; it is not part of the 14-story backlog.
+The seven extra future-work issues are archived from the active board view, not deleted. One accidental duplicate CA-01 is [closed as issue #2](https://github.com/KaustubhMukdam/devops-capstone-project/issues/2) and excluded from the board.
 
-Before final submission, capture the pending screenshots of the issue list, board, Sprint field/estimates, and Sprint Backlog. Suggested names in this folder are `module-1-issues.png`, `module-1-board.png`, `module-1-sprint-fields.png`, and `module-1-sprint-backlog.png`. Verify that each screenshot shows the relevant GitHub page and record its capture date here. This session has no browser surface for direct screenshot capture.
+Capture each board state before moving to the next one. This session has no browser surface for direct GitHub screenshots, so the four staged board images need to be captured in the user's browser and placed in this folder.

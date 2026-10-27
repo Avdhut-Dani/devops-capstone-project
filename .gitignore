@@ -110,3 +110,7 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Local course handouts and rendered review files
+/modules/
+/tmp/
