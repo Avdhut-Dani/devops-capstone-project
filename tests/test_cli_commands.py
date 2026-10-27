@@ -19,5 +19,5 @@ class TestFlaskCLI(TestCase):
         """It should call the db-create command"""
         db_mock.return_value = MagicMock()
         with patch.dict(os.environ, {"FLASK_APP": "service:app"}, clear=True):
-            result = self.runner.invoke(db_create)
+            result = self.runner.invoke(db_create, args=[])
             self.assertEqual(result.exit_code, 0)
