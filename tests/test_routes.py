@@ -102,6 +102,9 @@ class TestAccountService(TestCase):
 
         # Check the data is correct
         new_account = response.get_json()
+        read_response = self.client.get(location)
+        self.assertEqual(read_response.status_code, status.HTTP_200_OK)
+        self.assertEqual(read_response.get_json(), new_account)
         self.assertEqual(new_account["name"], account.name)
         self.assertEqual(new_account["email"], account.email)
         self.assertEqual(new_account["address"], account.address)
@@ -122,5 +125,23 @@ class TestAccountService(TestCase):
             content_type="test/html"
         )
         self.assertEqual(response.status_code, status.HTTP_415_UNSUPPORTED_MEDIA_TYPE)
+
+    def test_read_an_account(self):
+        """It should Read an account by its ID"""
+        account = self._create_accounts(1)[0]
+        response = self.client.get(f"{BASE_URL}/{account.id}")
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.get_json(), account.serialize())
+
+    def test_account_not_found(self):
+        """It should return 404 when an account does not exist"""
+        response = self.client.get(f"{BASE_URL}/0")
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+    def test_method_not_allowed(self):
+        """It should report an unsupported HTTP method"""
+        response = self.client.post("/health")
+        self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
+        self.assertEqual(response.get_json()["error"], "Method not Allowed")
 
     # ADD YOUR TEST CASES HERE ...
