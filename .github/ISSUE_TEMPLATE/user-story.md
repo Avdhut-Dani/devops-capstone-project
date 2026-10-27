@@ -1,8 +1,8 @@
 ---
 name: user-story
-about: user story
+about: Customer Accounts user story
 title: ''
-labels: ''
+labels: 'user story'
 assignees: ''
 
 ---

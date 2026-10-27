@@ -2,39 +2,38 @@
 
 Repository: https://github.com/KaustubhMukdam/devops-capstone-project
 
-This plan is based on the capstone overview and the starter code. It is a draft until the GitHub issues, Project board, sprint assignments, and estimates are published and verified. The starter service already implements `POST /accounts` and the Account model; the four missing REST operations are read, update, delete, and list. The existing `tekton/` files are partial starter manifests, so the delivery story is to complete and verify them.
+This plan is based on the capstone overview and the starter code. The issues, Project board, sprint assignments, and estimates were published and verified on 2026-10-27. The starter service already implements `POST /accounts` and the Account model; the four missing REST operations are read, update, delete, and list. The existing `tekton/` files are partial starter manifests, so the delivery story is to complete and verify them.
 
 ## Board and sprint setup
 
-- GitHub Project: **Customer Accounts Capstone** (link to record after creation).
-- Board status choices, in order: **Backlog**, **In Progress**, **Done**, **Closed**. Move each issue through these as work proceeds; close the GitHub issue at the final step.
-- Sprint field: **Sprint 1**, **Sprint 2**, **Sprint 3**. Keep dates unset until the actual course/lab schedule is known; do not invent completed sprint dates.
-- Estimate field: **Story points** with Fibonacci values (1, 2, 3, 5, 8). The estimates below represent relative effort, not hours.
-- Add every issue to the Project in Backlog initially. Set its sprint and story points. The Sprint 1 filtered view becomes the initial Sprint Backlog; future sprint issues remain in Backlog.
-- Suggested labels: `user story`, `sprint:1`, `sprint:2`, `sprint:3`, `api`, `ci`, `security`, `deployment`, `cd`. GitHub Project fields should remain the source of truth for sprint and points.
+- GitHub Project: **[Customer Accounts Capstone](https://github.com/users/KaustubhMukdam/projects/3)**, public and linked to the repository. It reuses the existing capstone Project instead of adding another board.
+- Existing board status choices: **New Issues**, **Icebox**, **Product Backlog**, **Sprint Backlog**, **In Progress**, **Review/QA**, **Done**. The six Sprint 1 stories are in Sprint Backlog; Sprint 2 and 3 stories are in Product Backlog. Close each GitHub issue when its work is complete.
+- Sprint field: **Sprint 1**, **Sprint 2**, **Sprint 3**. Dates are unset because the actual course/lab schedule is unknown.
+- Existing **Estimate** number field stores Fibonacci story points (1, 2, 3, 5, 8). The estimates below represent relative effort, not hours.
+- Labels: `user story`, `sprint:1`, `sprint:2`, `sprint:3`, `api`, `ci`, `security`, `deployment`, `cd`. GitHub Project fields are the source of truth for sprint and points.
 
 | ID | Issue title | Sprint | Points | Depends on |
 |---|---|---:|---:|---|
-| CA-01 | Set up the development environment and Sprint 1 branch | 1 | 2 | — |
-| CA-02 | Read a customer account by ID | 1 | 3 | CA-01 |
-| CA-03 | Update a customer account | 1 | 3 | CA-02 |
-| CA-04 | Delete a customer account | 1 | 3 | CA-02 |
-| CA-05 | List and filter customer accounts | 1 | 3 | CA-01 |
-| CA-06 | Verify Sprint 1 tests and at least 95% coverage | 1 | 2 | CA-02–05 |
-| CA-07 | Run lint, tests, and coverage in GitHub Actions | 2 | 5 | CA-06 |
-| CA-08 | Add secure response headers with Flask-Talisman | 2 | 3 | CA-07 |
-| CA-09 | Configure cross-origin access with Flask-CORS | 2 | 3 | CA-07 |
-| CA-10 | Package the service in a Docker image | 3 | 3 | CA-09 |
-| CA-11 | Publish the image to IBM Cloud Container Registry | 3 | 2 | CA-10 |
-| CA-12 | Provision PostgreSQL in OpenShift | 3 | 3 | — |
-| CA-13 | Deploy and expose the service on Kubernetes | 3 | 5 | CA-11, CA-12 |
-| CA-14 | Automate lint, test, build, and deploy with Tekton | 3 | 5 | CA-13 |
+| CA-01 | [Set up the development environment and Sprint 1 branch](https://github.com/KaustubhMukdam/devops-capstone-project/issues/1) | 1 | 2 | — |
+| CA-02 | [Read a customer account by ID](https://github.com/KaustubhMukdam/devops-capstone-project/issues/3) | 1 | 3 | CA-01 |
+| CA-03 | [Update a customer account](https://github.com/KaustubhMukdam/devops-capstone-project/issues/4) | 1 | 3 | CA-02 |
+| CA-04 | [Delete a customer account](https://github.com/KaustubhMukdam/devops-capstone-project/issues/5) | 1 | 3 | CA-02 |
+| CA-05 | [List and filter customer accounts](https://github.com/KaustubhMukdam/devops-capstone-project/issues/6) | 1 | 3 | CA-01 |
+| CA-06 | [Verify Sprint 1 tests and at least 95% coverage](https://github.com/KaustubhMukdam/devops-capstone-project/issues/7) | 1 | 2 | CA-02–05 |
+| CA-07 | [Run lint, tests, and coverage in GitHub Actions](https://github.com/KaustubhMukdam/devops-capstone-project/issues/8) | 2 | 5 | CA-06 |
+| CA-08 | [Add secure response headers with Flask-Talisman](https://github.com/KaustubhMukdam/devops-capstone-project/issues/9) | 2 | 3 | CA-07 |
+| CA-09 | [Configure cross-origin access with Flask-CORS](https://github.com/KaustubhMukdam/devops-capstone-project/issues/10) | 2 | 3 | CA-07 |
+| CA-10 | [Package the service in a Docker image](https://github.com/KaustubhMukdam/devops-capstone-project/issues/11) | 3 | 3 | CA-09 |
+| CA-11 | [Publish the image to IBM Cloud Container Registry](https://github.com/KaustubhMukdam/devops-capstone-project/issues/12) | 3 | 2 | CA-10 |
+| CA-12 | [Provision PostgreSQL in OpenShift](https://github.com/KaustubhMukdam/devops-capstone-project/issues/13) | 3 | 3 | — |
+| CA-13 | [Deploy and expose the service on Kubernetes](https://github.com/KaustubhMukdam/devops-capstone-project/issues/14) | 3 | 5 | CA-11, CA-12 |
+| CA-14 | [Automate lint, test, build, and deploy with Tekton](https://github.com/KaustubhMukdam/devops-capstone-project/issues/15) | 3 | 5 | CA-13 |
 
 Sprint 1: **16 points**. Sprint 2: **11 points**. Sprint 3: **18 points**. Total: **45 points**. These are planning estimates and can change as implementation reveals work.
 
 ## Issue bodies
 
-Each section below is ready to use as a GitHub issue body with the matching title. The acceptance criteria describe observable results; screenshots, CI logs, or cluster outputs should be recorded in the evidence index when a story is completed.
+Each section below is the published GitHub issue body with the matching title. The acceptance criteria describe observable results; screenshots, CI logs, or cluster outputs should be recorded in the evidence index when a story is completed.
 
 ### CA-01 — Set up the development environment and Sprint 1 branch
 
