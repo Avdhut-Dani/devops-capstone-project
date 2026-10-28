@@ -1,0 +1,5 @@
+REPOSITORY                                                                  TAG       IMAGE ID       CREATED          SIZE
+image-registry.openshift-image-registry.svc:5000/sn-labs-poojapatil21/accounts   latest    d6056d671faa   15 minutes ago   442MB
+image-registry.openshift-image-registry.svc:5000/sn-labs-poojapatil21/accounts   1         d6056d671faa   15 minutes ago   442MB
+python                                                                      3.9-slim  7f62d10c56f2   2 weeks ago      125MB
+postgres                                                                    alpine    5b4b1a416a24   3 weeks ago      247MB
